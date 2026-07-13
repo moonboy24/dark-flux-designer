@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
+import { Magnetic } from "./Magnetic";
 
 const PROJECTS = [
   {
@@ -56,13 +56,13 @@ export function Projects() {
         <div className="space-y-6 md:space-y-8">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.08}>
-              <motion.a
+              <Magnetic
                 href={p.live || "#"}
                 target={p.live ? "_blank" : undefined}
                 rel="noreferrer"
-                whileHover={{ y: -4 }}
+                strength={0.15}
                 data-hover
-                className="group block border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#C8FF3D]/40 transition-all duration-300 p-8 md:p-12 relative overflow-hidden"
+                className="group block border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#C8FF3D]/40 transition-colors duration-300 p-8 md:p-12 relative overflow-hidden will-change-transform"
               >
                 <div className="absolute top-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-700" style={{ background: "#C8FF3D" }} />
                 <div className="grid md:grid-cols-12 gap-8">
@@ -103,7 +103,7 @@ export function Projects() {
                     </div>
                   </div>
                 </div>
-              </motion.a>
+              </Magnetic>
             </Reveal>
           ))}
         </div>
