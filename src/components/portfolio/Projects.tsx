@@ -103,7 +103,7 @@ export function Projects() {
                     </div>
                   </div>
                 </div>
-              </motion.a>
+              </Magnetic>
             </Reveal>
           ))}
         </div>
